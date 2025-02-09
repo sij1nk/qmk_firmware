@@ -26,18 +26,19 @@
 #include "modifiers.h"
 #include "quantum.h"
 #include "process_tap_dance.h"
+#include "process_combo.h"
 #include "rgblight.h"
 
 // Layer aliases
-#define BASE     TO(_CANARY)
-#define MO_NAV   MO(_NAV)
-#define SYM      TG(_SYM) // unused
-#define NUM      TG(_NUM) // unused
-#define NUMSYM   TG(_NUMSYM) // unused
-#define MQUSE    LT(_MOUSE, KC_Q)
-#define HUN      TG(_HUN)
-#define ADJUST   TG(_ADJUST)
-#define MO_ADJ   MO(_ADJUST)
+#define BASE TO(_CANARY)
+#define MO_NAV MO(_NAV)
+#define SYM TG(_SYM)       // unused
+#define NUM TG(_NUM)       // unused
+#define NUMSYM TG(_NUMSYM) // unused
+#define MQUSE LT(_MOUSE, KC_Q)
+#define HUN TG(_HUN)
+#define ADJUST TG(_ADJUST)
+#define MO_ADJ MO(_ADJUST)
 
 // Mod-tap aliases
 #define LG(kc) LGUI_T(kc)
@@ -49,13 +50,17 @@
 #define RC(kc) RCTL_T(kc)
 #define RS(kc) RSFT_T(kc)
 
+const uint16_t PROGMEM sym_combo[]   = {KC_D, KC_H, COMBO_END};
+const uint16_t PROGMEM shift_combo[] = {KC_H, KC_SLSH, COMBO_END};
+combo_t                key_combos[]  = {COMBO(sym_combo, OSL_SYM), COMBO(shift_combo, OS_SHFT)};
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_CANARY] = LAYOUT(
         KC_TAB    , KC_W      , KC_L      , KC_Y      , KC_P      , KC_B      ,                                                 KC_Z      , KC_F      , KC_O      , KC_U      , KC_QUOT   , KC_BSPC   ,
         KC_ESC    , KC_C      , KC_R      , KC_S      , KC_T      , KC_G      ,                                                 KC_M      , KC_N      , KC_E      , KC_I      , KC_A      , KC_ENT    ,
         HUN       , MQUSE     , KC_J      , KC_V      , KC_D      , KC_K      , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_X      , KC_H      , KC_SLSH   , KC_COMM   , KC_DOT    , KC_DEL    ,
-                                            MO_ADJ    , QK_REP    , KC_SPC    , MO_NAV    , XXXXXXX   , XXXXXXX   , OSL_SYM   , KC_LSFT   , OSL_FUN   , XXXXXXX
+                                            MO_ADJ    , QK_REP    , KC_SPC    , MO_NAV    , XXXXXXX   , XXXXXXX   , OSL_SYM   , OS_SHFT   , OSL_FUN   , XXXXXXX
 
     ),
     [_SYM] = LAYOUT(

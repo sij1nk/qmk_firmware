@@ -7,5 +7,6 @@ UNICODE_ENABLE = yes
 DYNAMIC_TAPPING_TERM_ENABLE = yes
 REPEAT_KEY_ENABLE = yes
 TAP_DANCE_ENABLE = yes
+COMBO_ENABLE = yes
 
 SRC += hun.c rgb.c oneshot.c
