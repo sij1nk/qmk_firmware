@@ -32,6 +32,7 @@
 // Layer aliases
 #define BASE TO(_CANARY)
 #define MO_NAV MO(_NAV)
+#define MO_WM MO(_WM)
 #define SYM TG(_SYM)       // unused
 #define NUM TG(_NUM)       // unused
 #define NUMSYM TG(_NUMSYM) // unused
@@ -60,56 +61,63 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB    , KC_W      , KC_L      , KC_Y      , KC_P      , KC_B      ,                                                 KC_Z      , KC_F      , KC_O      , KC_U      , KC_QUOT   , KC_BSPC   ,
         KC_ESC    , KC_C      , KC_R      , KC_S      , KC_T      , KC_G      ,                                                 KC_M      , KC_N      , KC_E      , KC_I      , KC_A      , KC_ENT    ,
         HUN       , MQUSE     , KC_J      , KC_V      , KC_D      , KC_K      , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_X      , KC_H      , KC_SLSH   , KC_COMM   , KC_DOT    , KC_DEL    ,
-                                            MO_ADJ    , QK_REP    , KC_SPC    , MO_NAV    , XXXXXXX   , XXXXXXX   , OSL_SYM   , OS_SHFT   , OSL_FUN   , XXXXXXX
+                                            MO_ADJ    , QK_REP    , KC_SPC    , MO_NAV    , MO_WM     , OS_ALT   , OSL_SYM   , OS_SHFT   , OSL_FUN   , TG(_MOUSE)
 
     ),
     [_SYM] = LAYOUT(
-        _______   , KC_TILD   , KC_AT     , KC_HASH   , KC_DLR    , KC_PERC   ,                                                 KC_CIRC   , KC_GRV    , KC_PLUS   , KC_EQL    ,TD(TD_QUOT), _______   ,
-        _______   , KC_COLN   , KC_LBRC   , KC_LCBR   , KC_LPRN   , KC_LT     ,                                                 KC_BSLS   , KC_MINS   , KC_UNDS   , KC_PIPE   , KC_SCLN   , _______   ,
-        _______   , KC_AMPR   , KC_RBRC   , KC_RCBR   , KC_RPRN   , KC_GT     , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_EXLM   , KC_ASTR   ,TD(TD_SLSH), KC_COMM   , KC_DOT    , _______   ,
-                                            XXXXXXX   , XXXXXXX   , _______   , _______   , XXXXXXX   , XXXXXXX   , TG_NUM    , BASE      , XXXXXXX   , XXXXXXX
+        _______   , KC_AT     , KC_HASH   , KC_LBRC   , KC_RBRC   , KC_PERC   ,                                                 KC_CIRC   , KC_GRV    , KC_PLUS   , KC_PIPE   ,TD(TD_QUOT), _______   ,
+        _______   , KC_EQL    , KC_AMPR   , KC_LPRN   , KC_RPRN   , KC_LT     ,                                                 KC_BSLS   , KC_COLN   , KC_MINS   , KC_UNDS   , KC_SCLN   , _______   ,
+        _______   , KC_TILD   , KC_ASTR   , KC_LCBR   , KC_RCBR   , KC_GT     , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_EXLM   , KC_DLR    ,TD(TD_SLSH), KC_COMM   , KC_DOT    , _______   ,
+                                            XXXXXXX   , XXXXXXX   , _______   , _______   , _______   , _______   , TG_NUM    , BASE      , XXXXXXX   , XXXXXXX
     ),
     [_NUM] = LAYOUT(
         _______   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   ,                                                 XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , _______   ,
         _______   , XXXXXXX   , KC_5      , KC_3      , KC_1      , XXXXXXX   ,                                                 XXXXXXX   , KC_0      , KC_2      , KC_4      , XXXXXXX   , _______   ,
         _______   , XXXXXXX   , XXXXXXX   , KC_9      , KC_7      , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_6      , KC_8      , XXXXXXX   , XXXXXXX   , _______   ,
-                                            XXXXXXX   , QK_REP    , _______   , _______   , XXXXXXX   , XXXXXXX   , TG_NUMSYM , BASE      , XXXXXXX   , XXXXXXX
+                                            XXXXXXX   , QK_REP    , _______   , _______   , _______   , _______   , TG_NUMSYM , BASE      , XXXXXXX   , XXXXXXX
     ),
     [_NUMSYM] = LAYOUT(
-        _______   , KC_TILD   , KC_AT     , KC_HASH   , KC_DLR    , KC_PERC   ,                                                 KC_CIRC   , KC_GRV    , KC_PLUS   , KC_EQL    ,TD(TD_QUOT), _______   ,
-        _______   , KC_COLN   , KC_LBRC   , KC_LCBR   , KC_LPRN   , KC_LT     ,                                                 KC_BSLS   , KC_MINS   , KC_UNDS   , KC_PIPE   , KC_SCLN   , _______   ,
-        _______   , KC_AMPR   , KC_RBRC   , KC_RCBR   , KC_RPRN   , KC_GT     , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_EXLM   , KC_ASTR   ,TD(TD_SLSH), KC_COMM   , KC_DOT    , _______   ,
-                                            XXXXXXX   , QK_REP    , _______   , _______   , XXXXXXX   , XXXXXXX   , _______   , BASE      , XXXXXXX   , XXXXXXX
+        _______   , KC_AT     , KC_HASH   , KC_LBRC   , KC_RBRC   , KC_PERC   ,                                                 KC_CIRC   , KC_GRV    , KC_PLUS   , KC_PIPE   ,TD(TD_QUOT), _______   ,
+        _______   , KC_EQL    , KC_AMPR   , KC_LPRN   , KC_RPRN   , KC_LT     ,                                                 KC_BSLS   , KC_COLN   , KC_MINS   , KC_UNDS   , KC_SCLN   , _______   ,
+        _______   , KC_TILD   , KC_ASTR   , KC_LCBR   , KC_RCBR   , KC_GT     , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_EXLM   , KC_DLR    ,TD(TD_SLSH), KC_COMM   , KC_DOT    , _______   ,
+                                            XXXXXXX   , QK_REP    , _______   , _______   , _______   , _______   , _______   , BASE      , XXXXXXX   , XXXXXXX
     ),
     [_FUN] = LAYOUT(
         _______   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   ,                                                 XXXXXXX   , XXXXXXX   , XXXXXXX    , XXXXXXX   , XXXXXXX   , _______   ,
         _______   , XXXXXXX   , KC_F5     , KC_F3     , KC_F1     , XXXXXXX   ,                                                 XXXXXXX   , KC_F10    , KC_F2      , KC_F4     , XXXXXXX   , _______   ,
         _______   , XXXXXXX   , KC_F11    , KC_F9     , KC_F7     , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_F6     , KC_F8      , KC_F12    , XXXXXXX   , _______   ,
-                                            XXXXXXX   , QK_REP    , _______   , _______   , XXXXXXX   , XXXXXXX   , XXXXXXX   , BASE      , BASE      , XXXXXXX
+                                            XXXXXXX   , QK_REP    , _______   , _______   , _______   , _______   , XXXXXXX   , BASE      , BASE      , XXXXXXX
     ),
     [_NAV] = LAYOUT(
         _______   , KC_MRWD   , KC_MPRV   , KC_MPLY   , KC_MNXT   , KC_MFFD   ,                                                 KC_CUT    , KC_COPY   , KC_PSTE   , KC_FIND   , KC_INS    , _______   ,
         _______   , OS_GUI    , OS_ALT    , OS_CTRL   , OS_SHFT   , XXXXXXX   ,                                                 KC_LEFT   , KC_DOWN   , KC_UP     , KC_RGHT   , XXXXXXX   , _______   ,
         _______   , KC_BRID   , KC_VOLD   , KC_MUTE   , KC_VOLU   , KC_BRIU   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_HOME   , KC_PGDN   , KC_PGUP   , KC_END    , KC_PSCR   , _______   ,
-                                            XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX
+                                            XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , _______   , _______   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX
+    ),
+    [_WM] = LAYOUT(
+        XXXXXXX   , LCAG(KC_W), LCAG(KC_L), LCAG(KC_Y), LCAG(KC_P), LCAG(KC_B),                                                 LCAG(KC_Z), LCAG(KC_F), LCAG(KC_O), LCAG(KC_U),LCAG(KC_QUOT), XXXXXXX   ,
+        XXXXXXX   , LCAG(KC_C), LCAG(KC_R), LCAG(KC_S), LCAG(KC_T), LCAG(KC_G),                                                 LCAG(KC_M), LCAG(KC_N), LCAG(KC_E), LCAG(KC_I), LCAG(KC_A), XXXXXXX   ,
+        XXXXXXX   , LCAG(KC_Q), LCAG(KC_J), LCAG(KC_V), LCAG(KC_D), LCAG(KC_K), XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , LCAG(KC_X), LCAG(KC_H),LCAG(KC_SLSH),LCAG(KC_COMM),LCAG(KC_DOT), XXXXXXX   ,
+                                            XXXXXXX   , XXXXXXX   , KC_SPC    , XXXXXXX   , _______   , _______   , XXXXXXX   , OS_SHFT   , XXXXXXX   , XXXXXXX
+
     ),
     [_MOUSE] = LAYOUT(
         XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   ,                                                 KC_CUT    , KC_COPY   , KC_PSTE   , KC_FIND   , KC_BSPC   , _______   ,
         XXXXXXX   , KC_BTN4   , KC_BTN3   , KC_BTN2   , KC_BTN1   , KC_BTN5   ,                                                 KC_MS_L   , KC_MS_D   , KC_MS_U   , KC_MS_R   , KC_ENT    , _______   ,
         XXXXXXX   , XXXXXXX   , KC_ACL2   , KC_ACL1   , KC_ACL0   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_WH_L   , KC_WH_D   , KC_WH_U   , KC_WH_R   , KC_DEL    , _______   ,
-                                            XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_LGUI   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX
+                                            XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_LGUI   , _______   , _______   , XXXXXXX   , KC_BTN1   , KC_BTN2   , TG(_MOUSE)
     ),
     [_HUN] = LAYOUT(
         XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   ,                                                 XXXXXXX   , O_UMLAU   , O_ACUT    , U_ACUT    , XXXXXXX   , _______   ,
         XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   ,                                                 XXXXXXX   , O_DACUT   , E_ACUT    , I_ACUT    , A_ACUT    , _______   ,
         XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , U_UMLAU   , U_DACUT   , XXXXXXX   , XXXXXXX   , XXXXXXX   ,
-                                            XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_LSFT   , XXXXXXX   , XXXXXXX
+                                            XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , _______   , _______   , XXXXXXX   , KC_LSFT   , XXXXXXX   , XXXXXXX
     ),
     [_ADJUST] = LAYOUT(
         XXXXXXX   , RGB_M_B   , RGB_M_R   , RGB_M_SW  , XXXXXXX   , XXXXXXX   ,                                                 RGB_HUI   , RGB_SAI   , RGB_VAI   , XXXXXXX   , XXXXXXX   , XXXXXXX   ,
         XXXXXXX   , DT_PRNT   , DT_UP     , DT_DOWN   , XXXXXXX   , XXXXXXX   ,                                                 RGB_HUD   , RGB_SAD   , RGB_VAD   , XXXXXXX   , XXXXXXX   , XXXXXXX   ,
         XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   ,
-                                            XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , BASE      , XXXXXXX   , RGB_TOG
+                                            XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , _______   , _______   , XXXXXXX   , BASE      , XXXXXXX   , RGB_TOG
     ),
 };
 

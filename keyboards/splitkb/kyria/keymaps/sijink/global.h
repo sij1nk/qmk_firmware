@@ -12,6 +12,7 @@ enum layers {
     _NUMSYM,
     _FUN,
     _NAV,
+    _WM,
     _MOUSE,
     _HUN,
     _ADJUST,
