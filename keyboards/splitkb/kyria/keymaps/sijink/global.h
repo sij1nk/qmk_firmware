@@ -6,7 +6,7 @@
 layer_state_t cached_layer_state;
 
 enum layers {
-    _CANARY = 0,
+    _QWERTY = 0,
     _SYM,
     _NUM,
     _NUMSYM,

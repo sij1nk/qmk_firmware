@@ -30,13 +30,13 @@
 #include "rgblight.h"
 
 // Layer aliases
-#define BASE TO(_CANARY)
+#define BASE TO(_QWERTY)
 #define MO_NAV MO(_NAV)
 #define MO_WM MO(_WM)
 #define SYM TG(_SYM)       // unused
 #define NUM TG(_NUM)       // unused
 #define NUMSYM TG(_NUMSYM) // unused
-#define MQUSE LT(_MOUSE, KC_Q)
+#define MOUZE LT(_MOUSE, KC_Z)
 #define HUN TG(_HUN)
 #define ADJUST TG(_ADJUST)
 #define MO_ADJ MO(_ADJUST)
@@ -51,23 +51,23 @@
 #define RC(kc) RCTL_T(kc)
 #define RS(kc) RSFT_T(kc)
 
-const uint16_t PROGMEM sym_combo[]   = {KC_D, KC_H, COMBO_END};
-const uint16_t PROGMEM shift_combo[] = {KC_H, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM sym_combo[]   = {KC_V, KC_M, COMBO_END};
+const uint16_t PROGMEM shift_combo[] = {KC_M, KC_COMM, COMBO_END};
 combo_t                key_combos[]  = {COMBO(sym_combo, OSL_SYM), COMBO(shift_combo, OS_SHFT)};
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_CANARY] = LAYOUT(
-        KC_TAB    , KC_W      , KC_L      , KC_Y      , KC_P      , KC_B      ,                                                 KC_Z      , KC_F      , KC_O      , KC_U      , KC_QUOT   , KC_BSPC   ,
-        KC_ESC    , KC_C      , KC_R      , KC_S      , KC_T      , KC_G      ,                                                 KC_M      , KC_N      , KC_E      , KC_I      , KC_A      , KC_ENT    ,
-        HUN       , MQUSE     , KC_J      , KC_V      , KC_D      , KC_K      , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_X      , KC_H      , KC_SLSH   , KC_COMM   , KC_DOT    , KC_DEL    ,
+    [_QWERTY] = LAYOUT(
+        KC_TAB    , KC_Q      , KC_W      , KC_E      , KC_R      , KC_T      ,                                                 KC_Y      , KC_U      , KC_I      , KC_O      , KC_P      , KC_BSPC   ,
+        KC_ESC    , KC_A      , KC_S      , KC_D      , KC_F      , KC_G      ,                                                 KC_H      , KC_J      , KC_K      , KC_L      , KC_SCLN   , KC_ENT    ,
+        HUN       , MOUZE     , KC_X      , KC_C      , KC_V      , KC_B      , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_N      , KC_M      , KC_COMM   , KC_DOT    , KC_SLSH   , KC_DEL    ,
                                             MO_ADJ    , QK_REP    , KC_SPC    , MO_NAV    , MO_WM     , OS_ALT   , OSL_SYM   , OS_SHFT   , OSL_FUN   , TG(_MOUSE)
 
     ),
     [_SYM] = LAYOUT(
         _______   , KC_AT     , KC_HASH   , KC_LBRC   , KC_RBRC   , KC_PERC   ,                                                 KC_CIRC   , KC_GRV    , KC_PLUS   , KC_PIPE   ,TD(TD_QUOT), _______   ,
-        _______   , KC_EQL    , KC_AMPR   , KC_LPRN   , KC_RPRN   , KC_LT     ,                                                 KC_BSLS   , KC_COLN   , KC_MINS   , KC_UNDS   , KC_SCLN   , _______   ,
-        _______   , KC_TILD   , KC_ASTR   , KC_LCBR   , KC_RCBR   , KC_GT     , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_EXLM   , KC_DLR    ,TD(TD_SLSH), KC_COMM   , KC_DOT    , _______   ,
+        _______   , KC_EQL    , KC_AMPR   , KC_LPRN   , KC_RPRN   , KC_LT     ,                                                 KC_BSLS   , KC_COLN   , KC_MINS   , KC_UNDS   , KC_QUOT   , _______   ,
+        _______   , KC_TILD   , KC_ASTR   , KC_LCBR   , KC_RCBR   , KC_GT     , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_EXLM   , KC_DLR    , KC_COMM   , KC_DOT    ,TD(TD_SLSH), _______   ,
                                             XXXXXXX   , XXXXXXX   , _______   , _______   , _______   , _______   , TG_NUM    , BASE      , XXXXXXX   , XXXXXXX
     ),
     [_NUM] = LAYOUT(
@@ -78,8 +78,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_NUMSYM] = LAYOUT(
         _______   , KC_AT     , KC_HASH   , KC_LBRC   , KC_RBRC   , KC_PERC   ,                                                 KC_CIRC   , KC_GRV    , KC_PLUS   , KC_PIPE   ,TD(TD_QUOT), _______   ,
-        _______   , KC_EQL    , KC_AMPR   , KC_LPRN   , KC_RPRN   , KC_LT     ,                                                 KC_BSLS   , KC_COLN   , KC_MINS   , KC_UNDS   , KC_SCLN   , _______   ,
-        _______   , KC_TILD   , KC_ASTR   , KC_LCBR   , KC_RCBR   , KC_GT     , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_EXLM   , KC_DLR    ,TD(TD_SLSH), KC_COMM   , KC_DOT    , _______   ,
+        _______   , KC_EQL    , KC_AMPR   , KC_LPRN   , KC_RPRN   , KC_LT     ,                                                 KC_BSLS   , KC_COLN   , KC_MINS   , KC_UNDS   , KC_QUOT   , _______   ,
+        _______   , KC_TILD   , KC_ASTR   , KC_LCBR   , KC_RCBR   , KC_GT     , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_EXLM   , KC_DLR    , KC_COMM   , KC_DOT    ,TD(TD_SLSH), _______   ,
                                             XXXXXXX   , QK_REP    , _______   , _______   , _______   , _______   , _______   , BASE      , XXXXXXX   , XXXXXXX
     ),
     [_FUN] = LAYOUT(
@@ -95,9 +95,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , _______   , _______   , XXXXXXX   , OS_SHFT   , XXXXXXX   , XXXXXXX
     ),
     [_WM] = LAYOUT(
-        XXXXXXX   , LCAG(KC_W), LCAG(KC_L), LCAG(KC_Y), LCAG(KC_P), LCAG(KC_B),                                                 LCAG(KC_Z), LCAG(KC_F), LCAG(KC_O), LCAG(KC_U),LCAG(KC_QUOT), XXXXXXX   ,
-        XXXXXXX   , LCAG(KC_C), LCAG(KC_R), LCAG(KC_S), LCAG(KC_T), LCAG(KC_G),                                                 LCAG(KC_M), LCAG(KC_N), LCAG(KC_E), LCAG(KC_I), LCAG(KC_A), XXXXXXX   ,
-        XXXXXXX   , LCAG(KC_Q), LCAG(KC_J), LCAG(KC_V), LCAG(KC_D), LCAG(KC_K), XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , LCAG(KC_X), LCAG(KC_H),LCAG(KC_SLSH),LCAG(KC_COMM),LCAG(KC_DOT), XXXXXXX   ,
+        XXXXXXX   , LCAG(KC_Q), LCAG(KC_W), LCAG(KC_E), LCAG(KC_R), LCAG(KC_T),                                                 LCAG(KC_Y), LCAG(KC_U), LCAG(KC_I), LCAG(KC_O),LCAG(KC_P), XXXXXXX   ,
+        XXXXXXX   , LCAG(KC_A), LCAG(KC_S), LCAG(KC_D), LCAG(KC_F), LCAG(KC_G),                                                 LCAG(KC_H), LCAG(KC_J), LCAG(KC_K), LCAG(KC_L), LCAG(KC_SCLN), XXXXXXX   ,
+        XXXXXXX   , LCAG(KC_Z), LCAG(KC_X), LCAG(KC_C), LCAG(KC_V), LCAG(KC_B), XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , LCAG(KC_N), LCAG(KC_M),LCAG(KC_COMM),LCAG(KC_DOT),LCAG(KC_SLSH), XXXXXXX   ,
                                             XXXXXXX   , XXXXXXX   , KC_SPC    , XXXXXXX   , _______   , _______   , XXXXXXX   , OS_SHFT   , XXXXXXX   , XXXXXXX
 
     ),
@@ -108,9 +108,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_LGUI   , _______   , _______   , XXXXXXX   , KC_BTN1   , KC_BTN2   , TG(_MOUSE)
     ),
     [_HUN] = LAYOUT(
-        XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   ,                                                 XXXXXXX   , O_UMLAU   , O_ACUT    , U_ACUT    , XXXXXXX   , _______   ,
-        XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   ,                                                 XXXXXXX   , O_DACUT   , E_ACUT    , I_ACUT    , A_ACUT    , _______   ,
-        XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , U_UMLAU   , U_DACUT   , XXXXXXX   , XXXXXXX   , XXXXXXX   ,
+        XXXXXXX   , XXXXXXX   , XXXXXXX   , E_ACUT    , XXXXXXX   , XXXXXXX   ,                                                 XXXXXXX   , U_ACUT    , I_ACUT    , O_ACUT    , XXXXXXX   , _______   ,
+        XXXXXXX   , A_ACUT    , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   ,                                                 XXXXXXX   , U_DACUT   , XXXXXXX   , O_DACUT   , XXXXXXX   , _______   ,
+        XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , U_UMLAU   , XXXXXXX   , O_UMLAU   , XXXXXXX   , _______   ,
                                             XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , _______   , _______   , XXXXXXX   , KC_LSFT   , XXXXXXX   , XXXXXXX
     ),
     [_ADJUST] = LAYOUT(
