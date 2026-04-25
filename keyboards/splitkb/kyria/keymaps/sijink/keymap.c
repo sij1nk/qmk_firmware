@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______   , KC_MRWD   , KC_MPRV   , KC_MPLY   , KC_MNXT   , KC_MFFD   ,                                                 KC_CUT    , KC_COPY   , KC_PSTE   , KC_FIND   , KC_INS    , _______   ,
         _______   , OS_GUI    , OS_ALT    , OS_CTRL   , OS_SHFT   , XXXXXXX   ,                                                 KC_LEFT   , KC_DOWN   , KC_UP     , KC_RGHT   , XXXXXXX   , _______   ,
         _______   , KC_BRID   , KC_VOLD   , KC_MUTE   , KC_VOLU   , KC_BRIU   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , KC_HOME   , KC_PGDN   , KC_PGUP   , KC_END    , KC_PSCR   , _______   ,
-                                            XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , _______   , _______   , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX
+                                            XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX   , _______   , _______   , XXXXXXX   , OS_SHFT   , XXXXXXX   , XXXXXXX
     ),
     [_WM] = LAYOUT(
         XXXXXXX   , LCAG(KC_W), LCAG(KC_L), LCAG(KC_Y), LCAG(KC_P), LCAG(KC_B),                                                 LCAG(KC_Z), LCAG(KC_F), LCAG(KC_O), LCAG(KC_U),LCAG(KC_QUOT), XXXXXXX   ,
